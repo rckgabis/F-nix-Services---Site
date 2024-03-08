@@ -70,28 +70,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_servico'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Importação das fontes League Spartan e Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/dashboard.css">
     <title>Painel</title>
 </head>
 
-<style>
-    h1 {
-        font-size: 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-        background-color: #fa4b00;
-        color: white;
-        padding: 10px;
-        margin-top: 20px;
-        max-width: 300px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    label.hora {
-        color: white;
-    }
-</style>
 
 <body>
 
@@ -99,16 +91,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_servico'])) {
     <div class="container">
         <nav>
             <div class="img">
-                <img src="logo-fenix.png" alt="Logo do site">
+                <img src="../assets/logo-fenix.png" alt="Logo do site">
             </div>
             <ul>
-                <li><a href="#" id="registroMenu" onclick="mostrarRegistro()">Registro<i
+                <li><a href="#" id="registroMenu" onclick="mostrarRegistro()">REGISTRO<i
                             class="ph ph-list-plus"></i></a></li>
-                <li><a href="#" id="clientesMenu" onclick="mostrarClientes()">Clientes<i
+                <li><a href="#" id="clientesMenu" onclick="mostrarClientes()">CLIENTES<i
                             class="ph ph-user-list"></i></a></li>
                 <!--<li><a href="#" id="ocorrenciasMenu" onclick="mostrarOcorrencia()">Ocorrências<i
                             class="ph ph-read-cv-logo"></i></a></li>-->
-                <li><a href="#" id="usuariosMenu" onclick="mostrarUsuario()">Usuários<i class="ph ph-users"></i></a>
+                <li><a href="#" id="usuariosMenu" onclick="mostrarUsuario()">USUÁRIOS<i class="ph ph-users"></i></a>
                 </li>
             </ul>
             <div class="btn-sair">

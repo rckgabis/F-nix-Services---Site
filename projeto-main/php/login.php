@@ -6,6 +6,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = $_POST['login'];
     $senha = $_POST['senha'];
 
+    // Evitar injeção de SQL
+    $login = mysqli_real_escape_string($conexao, $login);
+    $senha = mysqli_real_escape_string($conexao, $senha);
+
     $query = "SELECT * FROM usuario WHERE usuario = '$login' AND senha = '$senha'";
     $result = mysqli_query($conexao, $query);
 
@@ -22,16 +26,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
-<style>
-
-    h1{
-        font-size: 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-        background-color: black;
-        color: white;
-        padding: 10px;
-        margin-top: 20px;
-    }
-    </style>

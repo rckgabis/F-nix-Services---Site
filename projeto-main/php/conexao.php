@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
 $usuario = 'root';
-$senha = '6438';
+$senha = '';
 $banco = 'fenixlogin';
 
 $conexao = mysqli_connect($host, $usuario, $senha, $banco);

@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'League Spartan', sans-serif; 
 }
 
 .btn-sair{
@@ -26,7 +26,6 @@ a.botao-sair{
     border-radius: 10px;
     padding: 10px 30px;
     font-size: 20px;
-    background-color: red;
     color: white;
     margin-top: 1px;
     max-width: 300px;
@@ -44,7 +43,8 @@ a:hover {
     position: fixed;
     height: 100%;
     top: 0px;
-    background-color: #fa4b00;
+    background-color: #FF5C00;
+
 }
 
 nav{
@@ -71,7 +71,7 @@ nav ul li{
 nav ul li a{
     text-decoration: none;
     color: white;
-    font-size: 25px;
+    font-size: 16px;
     font-weight: 500;
     transition: 0.5s ease;
     border-bottom: 2px solid transparent;
@@ -80,12 +80,15 @@ nav ul li a{
     justify-content: center;
     align-items: center;
     width: fit-content;
+    font-family: 'League Spartan', sans-serif; 
+    letter-spacing: 7px;
 }
 
+
 nav ul li a:hover{
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid #ffffff;
     color: white;
-    background-color: #fa4b00;
+    background-color: #FF5C00;
 }
 
 .button-editar {
@@ -169,7 +172,7 @@ option {
         background-color: #cfd5e1;
         padding: 40px;
         border-radius: 10px;
-        background-color: #fa4b00;
+        background-color: #FF5C00;
         margin-top: -60px;
     }
 

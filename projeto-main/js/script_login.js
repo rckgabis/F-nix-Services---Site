@@ -1,15 +1,33 @@
 document.querySelector('.login-btn').addEventListener('click', function() {
-    var email = document.querySelector('input[type="email"]').value;
-    var senha = document.querySelector('input[type="password"]').value;
+    var login = document.getElementById('loginInput').value;
+    var senha = document.getElementById('passwordInput').value;
     
-    // Aqui você pode adicionar a lógica para verificar as credenciais, por exemplo, enviando-as para um servidor.
-    // Neste exemplo, apenas exibiremos as credenciais no console.
-    console.log('Email:', email);
-    console.log('Senha:', senha);
+    // Cria um objeto XMLHttpRequest
+    var xhr = new XMLHttpRequest();
+    
+    // Configura a solicitação
+    xhr.open('POST', 'login.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    
+    // Define a função de retorno de chamada quando a solicitação estiver concluída
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                // Sucesso: redireciona para o dashboard
+                window.location.href = '../php/dashboard.php';
+            } else {
+                // Falha: exibe mensagem de erro
+                alert('Login falhou. Verifique suas credenciais.');
+            }
+        }
+    };
+    
+    // Envia a solicitação com os dados do formulário
+    xhr.send('login=' + encodeURIComponent(login) + '&senha=' + encodeURIComponent(senha));
 });
 
-// Adiciona o evento de clique no input de email
-document.getElementById('emailInput').addEventListener('click', function() {
+// Adiciona o evento de clique no input de login
+document.getElementById('loginInput').addEventListener('click', function() {
     // Remove o texto de placeholder quando o input é clicado
     this.placeholder = '';
 });
@@ -18,19 +36,4 @@ document.getElementById('emailInput').addEventListener('click', function() {
 document.getElementById('passwordInput').addEventListener('click', function() {
     // Remove o texto de placeholder quando o input é clicado
     this.placeholder = '';
-});
-
-// Adiciona o evento de clique em qualquer lugar da tela
-window.addEventListener('click', function(event) {
-    // Verifica se o clique ocorreu fora do input de email e se o input está vazio
-    if (event.target.id !== 'emailInput' && document.getElementById('emailInput').value === '') {
-        // Adiciona o texto de placeholder de volta ao input de email
-        document.getElementById('emailInput').placeholder = 'INSIRA SEU E-MAIL';
-    }
-
-    // Verifica se o clique ocorreu fora do input de senha e se o input está vazio
-    if (event.target.id !== 'passwordInput' && document.getElementById('passwordInput').value === '') {
-        // Adiciona o texto de placeholder de volta ao input de senha
-        document.getElementById('passwordInput').placeholder = 'INSIRA SUA SENHA';
-    }
 });
