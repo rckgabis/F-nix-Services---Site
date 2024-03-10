@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.sidenav {
+    height: 100%;
+    width: 380px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #FF5C00;
+    padding-top: 40px;
+    background-image: url('../assets/fundo-nav.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sidenav a {
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 7px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    display: flex;
+    align-items: center; 
+    margin-left: 75px;
+    margin-top: 40px;
+}
+
+.sidenav a.logout {
+    margin-top: 300px; 
+}
+
+.sidenav a:hover {
+    color: #fac3a4;
+}
+
+.sidenav a i {
+    font-size: 28px;
+    margin-right: 20px;
+}
+
+.main {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 100px auto 0; 
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    font-size: 24px;
+    color: #105587;
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 7px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.container form .button-container {
+    text-align: center;
+}
+
+.lista {
+    
+    margin-top: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.list-item {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto; /* Define a grade com 6 colunas */
+    align-items: center; /* Alinha os itens verticalmente */
+    padding: 10px; /* Adiciona algum espaçamento entre os itens */
+    border-bottom: 1px solid #ccc; /* Adiciona uma linha divisória entre os itens */
+}
+
+.list-item span {
+    margin-right: 10px; /* Adiciona um espaço entre os campos */
+}
+
+.list-item i {
+    cursor: pointer; /* Altera o cursor para indicar que os ícones são clicáveis */
+    display: flex; /* Altera o display para flex */
+    justify-content: center; /* Alinha os ícones horizontalmente */
+    align-items: center; /* Alinha os ícones verticalmente */
+    width: 24px; /* Define a largura dos ícones */
+    height: 24px; /* Define a altura dos ícones */
+}
+
+.nome {
+    margin-right: 10px;
+}
+
+.icone-container {
+    display: flex;
+}
+
+.icone-olho,
+.ph-pen,
+.ph-trash-simple {
+    font-size: 24px;
+    color: #105587;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.icone-olho:hover,
+.ph-pen:hover,
+.ph-trash-simple:hover {
+    color: #FF5C00;
+}
+
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Espaçamento abaixo da barra de pesquisa */
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.btn-cadastrar {
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 2px;
+    font-size: 14px;
+    width: 300px;
+    padding: 12px;
+    border: none;
+    border-radius: 40px;
+    background-color: #105587;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-cadastrar:hover {
+    background-color: #FF5C00; /* cor de fundo ao passar o mouse */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 2px;
+    font-size: 14px;
+    width: 500px; /* Largura do campo de pesquisa */
+    padding: 12px; /* Espaçamento interno do campo de pesquisa */
+    border: 1px solid #ccc; /* Borda do campo de pesquisa */
+    border-radius: 40px; /* Arredondamento das bordas do campo de pesquisa */
+    margin-right: 10px; /* Espaçamento à direita do campo de pesquisa */
+    text-indent: 20px;
+}
+
+.search-bar button {
+    background-color: #105587; /* Cor de fundo do botão de pesquisa */
+    color: white; /* Cor do texto do botão de pesquisa */
+    border: none; /* Remover borda do botão de pesquisa */
+    padding: 10px; /* Espaçamento interno do botão de pesquisa */
+    border-radius: 20px; /* Arredondamento das bordas do botão de pesquisa */
+    cursor: pointer; /* Cursor ao passar sobre o botão de pesquisa */
+}
+
+.search-bar button i {
+    font-size: 20px; /* Tamanho do ícone de lupa */
+}
+
+.search-bar button:hover {
+    background-color: #FF5C00; /* Cor de fundo ao passar o mouse sobre o botão de pesquisa */
+}
+

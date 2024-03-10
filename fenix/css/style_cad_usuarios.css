@@ -1,0 +1,199 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.sidenav {
+    height: 100%;
+    width: 380px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #FF5C00;
+    padding-top: 40px;
+    background-image: url('../assets/fundo-nav.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sidenav a {
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 7px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    display: flex;
+    align-items: center; 
+    margin-left: 75px;
+    margin-top: 40px;
+}
+
+.sidenav a.logout {
+    margin-top: 300px; 
+}
+
+.sidenav a:hover {
+    color: #fac3a4;
+}
+
+.sidenav a i {
+    font-size: 28px;
+    margin-right: 20px;
+}
+
+.main {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 100px auto 0;
+    margin-left: 500px; /* Ajuste o valor aqui conforme necessário */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h2 {
+    font-size: 24px;
+    color: #105587;
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 7px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+form {
+    margin-left: 50px; /* Ajuste o recuo do formulário conforme necessário */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.sidenav {
+    height: 100%;
+    width: 380px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #FF5C00;
+    padding-top: 40px;
+    background-image: url('../assets/fundo-nav.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sidenav a {
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 7px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    display: flex;
+    align-items: center; 
+    margin-left: 75px;
+    margin-top: 40px;
+}
+
+.sidenav a.logout {
+    margin-top: 300px; 
+}
+
+.sidenav a:hover {
+    color: #fac3a4;
+}
+
+.sidenav a i {
+    font-size: 28px;
+    margin-right: 20px;
+}
+
+.main {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    max-width: 1000px;
+    margin: 80px auto 0;
+    margin-left: 550px; /* Ajuste o valor aqui conforme necessário */
+    padding-left: 40px;
+    padding-right: 80px;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h2 {
+    font-size: 24px;
+    color: #105587;
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 7px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+label {
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 600px;
+    color: #969494;
+}
+
+/* Largura dos campos de entrada */
+input[type="text"],
+textarea {
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #969494; 
+    text-indent: 10px; 
+    width: calc(100% - 20px); /* Ajusta a largura para considerar a margem */
+    padding: 10px;
+    border-radius: 40px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-right: 10px; /* Adiciona margem à direita do campo */
+    margin-bottom: 20px;
+}
+
+
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+    color: #233f57;
+}
+
+button[type="submit"],
+button[type="reset"] {
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 2px;
+    font-size: 16px;
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 40px;
+    background-color: #105587;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button-container {
+    text-align: center; /* Centraliza os botões */
+}

@@ -9,16 +9,19 @@ body {
     margin: 0;
 }
 
-/* Estilos para a caixa do login */
 .login-box {
-    background-color: #fff;
+    background-image: url('../assets/fundo-logi2.png');
+    background-size: cover;
+    background-position: center;
     border-radius: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 25px;
     height: 750px;
     width: 520px;
     text-align: center;
+    position: relative;
 }
+
 
 /* Estilos para o titulo "LOGIN" */
 h2 {
