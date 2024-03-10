@@ -1,0 +1,122 @@
+/* Estilos para o corpo no modo geral da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilos para a caixa do login */
+.login-box {
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    height: 750px;
+    width: 520px;
+    text-align: center;
+}
+
+/* Estilos para o titulo "LOGIN" */
+h2 {
+    font-size: 18px;
+    color: #105587;
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 7px;
+    margin-top: 400px;
+    margin-bottom: 60px;
+    font-weight: 600;
+}
+
+/* Estilos para os campos de entrada */
+.input-container {
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.input-container input {
+    width: calc(100% - 145px); 
+    padding: 12px;
+    border-radius: 40px;
+    border: 1px solid #b9b7b7;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #b9b7b7; 
+    text-indent: 60px; 
+}
+
+.input-container input::placeholder {
+    color: #9e9d9d; 
+}
+
+/* Estilos para o ícone */
+.input-container i {
+    position: absolute;
+    top: 50%;
+    margin-left: 20px;
+    transform: translateY(-50%);
+    color: #9e9d9d;
+}
+
+/* Estilos para o botão "Esqueceu sua senha?" */
+.forgot-password {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 2px;
+    font-size: 10px;
+    text-align: right;
+    margin-right: 60px;
+    font-weight: 600;
+}
+
+.forgot-password a {
+    color: #9e9d9d; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+}
+
+.forgot-password a:hover {
+    color: #FF5C00; 
+}
+
+/* Estilos para o botão "Acessar" */
+.login-btn {
+    background-color: #105587;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 2px;
+    margin-top: 40px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+}
+
+/* Estilos para o efeito hover do botão "Acessar" */
+.login-btn:hover {
+    color: #d8d8d8; 
+}
+
+/* Estilos para o botão "Crie sua conta" */
+.create-account {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 2px;
+    font-size: 8px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.create-account a {
+    color: #9e9d9d;
+    text-decoration: none;
+    transition: color 0.3s; 
+}
+
+.create-account a:hover {
+    color: #FF5C00; 
+}
