@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['usuario_nome'] = $login['nome'];
         $_SESSION['nivel_acesso'] = $login['nivel_acesso'];
 
-        header('Location: ../screens/index_home.html');
+        header('Location: ../screens/index_registro_ocorr.php');
         exit();
     } else {
         echo "<h1>Login falhou. Verifique suas credenciais.</h1>";

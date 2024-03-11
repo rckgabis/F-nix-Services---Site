@@ -37,6 +37,9 @@ include('../php/conexao.php');
 
     <!-- Importação da biblioteca -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <link rel="stylesheet" href="../css/style_registro_ocorr.css">
 </head>
@@ -75,7 +78,7 @@ include('../php/conexao.php');
         </select><br><br>
 
         <label for="ocorrencia">TIPO OCORRÊNCIA:</label>
-        <select id="ocorrencia" name="ocorrencia" required>
+        <select id="ocorrencia" name="ocorrencia" required onchange="mostrarFormularioNovoOcorrencia()">
             <option value="">SELECIONE O TIPO DA OCORRÊNCIA</option>
             <?php
             // Consulta SQL para obter os nomes dos clientes da tabela clientes
@@ -88,7 +91,7 @@ include('../php/conexao.php');
                 while ($row = mysqli_fetch_assoc($resultServicos)) {
                     //$ServicosId = $row['id'];
                     $ServicosNome = $row['nome_servico'];
-                    echo "<option value=''>$ServicosNome</option>";
+                    echo "<option value='$ServicosNome'>$ServicosNome</option>";
                 }
             } else {
                 echo "<option value=''>Erro ao carregar tipo de ocorrências</option>";
@@ -101,8 +104,126 @@ include('../php/conexao.php');
     <div class="button-container">
     <button type="button" class="btn" onclick="salvarOcorrencia()">SALVAR</button>
     <button type="button" class="btn" onclick="limparForm()">LIMPAR</button>
+    </div>
+</form>
+
+<!-- Formulário oculto para cadastrar nova ocorrência -->
+<form id="form_nova_ocorrencia" action="cadastrar_nova_ocorr.php" method="post" style="display: none;">
+    <label for="nova_ocorrencia">NOVA OCORRÊNCIA:</label>
+    <input id="nova_ocorrencia_input" name="nova_ocorrencia" class="cadocorr" placeholder="INSIRA NOVA OCORRÊNCIA">
+    <button type="button" class="btn" onclick="cadastrarNovaOcorrencia()">ENVIAR</button>
+</form>
+
 </div>
 
-<script src="../js/script_registro_ocorr.js"></script>
+<!-- Script da função cadastrar nova ocorrência -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script>
+
+function salvarOcorrencia() {
+    // Obter os dados do formulário
+    var cliente = document.getElementById('cliente').value;
+    var ocorrencia = document.getElementById('ocorrencia').value;
+
+    // Verificar se os dois selects estão selecionados
+    if (cliente.trim() === '' || ocorrencia.trim() === '') {
+        // Exibir um pop-up de erro utilizando SweetAlert2
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Por favor, selecione um cliente e uma ocorrência.',
+        });
+        return; // Impede o envio da requisição se os selects não estiverem selecionados
+    }
+
+    // Criar um objeto FormData para enviar os dados para o PHP
+    var formData = new FormData();
+    formData.append('cliente', cliente);
+    formData.append('ocorrencia', ocorrencia);
+
+    // Fazer uma requisição AJAX para o arquivo PHP
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '../php/registro_ocorr.php', true);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            // Verificar se a requisição foi bem-sucedida e exibir uma mensagem ao usuário
+            Swal.fire({
+                title: 'Sucesso!',
+                text: 'Nova ocorrência registrada com sucesso!',
+                icon: 'success',
+            });
+        } else {
+            // Se a requisição não foi bem-sucedida, exibir uma mensagem de erro
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Erro ao salvar a ocorrência.',
+            });
+        }
+    };
+    xhr.send(formData);
+}
+
+function cadastrarNovaOcorrencia() {
+    var novaOcorrencia = document.getElementById('nova_ocorrencia_input').value;
+
+    // Verificar se o campo nova_ocorrencia está vazio
+    if (novaOcorrencia.trim() === '') {
+        // Exibir um pop-up de erro utilizando SweetAlert2
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Por favor, preencha o campo Nova Ocorrência.',
+        });
+        return; // Impede o envio da requisição se o campo estiver vazio
+    }
+
+    // Criar um objeto FormData para enviar os dados para o PHP
+    var formData = new FormData();
+    formData.append('nova_ocorrencia', novaOcorrencia);
+
+    // Fazer uma requisição AJAX para o arquivo PHP
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '../php/cadastrar_nova_ocorr.php', true);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            // Verificar se a requisição foi bem-sucedida e exibir uma mensagem ao usuário
+            Swal.fire({
+                title: 'Sucesso!',
+                text: 'Ocorrência cadastrada com sucesso!',
+                icon: 'success',
+            });
+
+            // Limpar o campo após o cadastro
+            document.getElementById('nova_ocorrencia_input').value = '';
+        } else {
+            // Se a requisição não foi bem-sucedida, exibir uma mensagem de erro
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Erro ao cadastrar nova ocorrência.',
+            });
+        }
+    };
+    xhr.send(formData);
+}
+
+function mostrarFormularioNovoOcorrencia() {
+        var selectOcorrencia = document.getElementById('ocorrencia');
+        var formNovaOcorrencia = document.getElementById('form_nova_ocorrencia');
+
+        // Verifica se a opção selecionada é "Cadastrar nova"
+        if (selectOcorrencia.value === 'nova') {
+            formNovaOcorrencia.style.display = 'block'; // Mostra o formulário
+        } else {
+            formNovaOcorrencia.style.display = 'none'; // Esconde o formulário
+        }
+    }
+
+
+</script>
+
+
 </body>
 </html>

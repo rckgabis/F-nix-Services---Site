@@ -145,7 +145,7 @@ h2 {
     font-family: 'League Spartan', sans-serif;
     letter-spacing: 7px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 label {
@@ -160,7 +160,7 @@ label {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
-    grid-gap: 50px;
+    grid-gap: 10px;
 }
 
 /* Largura dos campos de entrada */
@@ -209,6 +209,13 @@ button[type="reset"] {
     text-align: center;
     margin-top: 20px;
 }
+
+.grid-container3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 50px;
+}
+
 
 .button-container {
     text-align: center; /* Centraliza os botões */

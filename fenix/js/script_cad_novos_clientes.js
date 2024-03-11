@@ -5,7 +5,7 @@ $(document).ready(function(){
     $('#cep').mask('00000-000');
 });
 
-$('#cep').blur(function() {
+$('#cep').blur(function() { //Preenche os dados de acordo com o CEP
     var cep = $(this).val().replace(/\D/g, '');
 
     if (cep.length != 8) {

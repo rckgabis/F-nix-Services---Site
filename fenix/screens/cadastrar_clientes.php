@@ -14,7 +14,6 @@ $isAdmin = ($nivel_acesso === 'admin');
 
 include('../php/conexao.php');
 
-
 ?>
 
 <!-- registro_ocorrencias.php -->
@@ -46,71 +45,71 @@ include('../php/conexao.php');
 <body>
 
 <div class="sidenav">
-    <img src="../assets/logo-fenix-branca.png" alt="Logo Fênix Branca" style="width: 100%; max-width: 225px; display: block; margin: 0 auto; padding-top: 40px;">
-    <a href="index_registro_ocorr.php"><i class="ph ph-list-plus"></i> REGISTRO   DE OCORRÊNCIAS</a>
-    <a href="index_clientes.php"><i class="ph ph-users-three"></i> CLIENTES</a>
-    <a href="index_cadastrar_usuarios.php"><i class="ph ph-user-list"></i> USUÁRIOS</a>
-    <a href="index.html" class="logout"><i class="ph ph-sign-out"></i> SAIR</a>
-</div>
-
-<div class="container">
-    <h2>CADASTRAR NOVO CLIENTE</h2>
-    <form id="cadastroCliente" action="cadastrar_novos_clientes.php" method="POST">
-    <label for="nome">NOME:</label>
-<input type="text" id="nome" name="nome" required placeholder="INSIRA O NOME COMPLETO"><br>
-
-<div class="grid-container">
-    <div>
-        <label for="cpf">CPF:</label>
-        <input type="text" id="cpf" name="cpf" required placeholder="INSIRA O CPF">
-    </div>
-    <div>
-        <label for="rg">RG:</label>
-        <input type="text" id="rg" name="rg" required placeholder="INSIRA O RG">
-    </div>
-</div>
-
-<div class="grid-container">
-    <div>
-        <label for="email">E-MAIL:</label>
-        <input type="email" id="email" name="email" required placeholder="INSIRA O E-MAIL">
-    </div>
-    <div>
-        <label for="telefone">TELEFONE:</label>
-        <input type="tel" id="telefone" name="telefone" required placeholder="INSIRA O TELEFONE">
-    </div>
-</div>
-
-<div class="grid-container">
-    <div>
-        <label for="residencia">TIPO:</label>
-        <select id="residencia" name="residencia" required>
-            <option value="" disabled selected hidden>SELECIONE O TIPO</option>
-            <option value="residencial">RESIDENCIAL</option>
-            <option value="comercial">COMERCIAL</option>
-        </select>
-    </div>
-    <div>
-        <label for="cep">CEP:</label>
-        <input type="text" id="cep" name="cep" required placeholder="INSIRA O CEP">
-    </div>
-</div>
-
-<div class="grid-container">
-    <div>
-        <label for="rua">RUA:</label>
-        <input type="text" id="rua" name="rua" required placeholder="INSIRA O NOME DA RUA">
+        <img src="../assets/logo-fenix-branca.png" alt="Logo Fênix Branca" style="width: 100%; max-width: 225px; display: block; margin: 0 auto; padding-top: 40px;">
+        <a href="index_registro_ocorr.php"><i class="ph ph-list-plus"></i> REGISTRO   DE OCORRÊNCIAS</a>
+        <a href="index_clientes.php"><i class="ph ph-users-three"></i> CLIENTES</a>
+        <a href="index_cadastrar_usuarios.php"><i class="ph ph-user-list"></i> USUÁRIOS</a>
+        <a href="index.html" class="logout"><i class="ph ph-sign-out"></i> SAIR</a>
     </div>
 
-    <div>
-        <label for="numero">N°:</label>
-        <input type="text" id="numero" name="numero" required placeholder="INSIRA O NÚMERO">
+    <div class="container">
+        <h2>CADASTRAR NOVO CLIENTE</h2>
+        <form id="cadastroCliente" action="cadastrar_novos_clientes.php" method="POST">
+        <label for="nome">NOME:</label>
+    <input type="text" id="nome" name="nome" required placeholder="INSIRA O NOME COMPLETO"><br>
+
+    <div class="grid-container">
+        <div>
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" required placeholder="INSIRA O CPF">
+        </div>
+        <div>
+            <label for="rg">RG:</label>
+            <input type="text" id="rg" name="rg" required placeholder="INSIRA O RG">
+        </div>
     </div>
 
-</div>
+    <div class="grid-container">
+        <div>
+            <label for="email">E-MAIL:</label>
+            <input type="email" id="email" name="email" required placeholder="INSIRA O E-MAIL">
+        </div>
+        <div>
+            <label for="telefone">TELEFONE:</label>
+            <input type="tel" id="telefone" name="telefone" required placeholder="INSIRA O TELEFONE">
+        </div>
+    </div>
 
-<div class="grid-container">
-<div>
+    <div class="grid-container">
+        <div>
+            <label for="residencia">TIPO:</label>
+            <select id="residencia" name="residencia" required>
+                <option value="" disabled selected hidden>SELECIONE O TIPO</option>
+                <option value="residencial">RESIDENCIAL</option>
+                <option value="comercial">COMERCIAL</option>
+            </select>
+        </div>
+        <div>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" required placeholder="INSIRA O CEP">
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <div>
+            <label for="rua">RUA:</label>
+            <input type="text" id="rua" name="rua" required placeholder="INSIRA O NOME DA RUA">
+        </div>
+
+        <div>
+            <label for="numero">N°:</label>
+            <input type="text" id="numero" name="numero" required placeholder="INSIRA O NÚMERO">
+        </div>
+
+    </div>
+
+    <div class="grid-container">
+    <div>
         <label for="bairro">BAIRRO:</label>
         <input type="text" id="bairro" name="bairro" required placeholder="INSIRA O BAIRRO">
     </div>
@@ -125,41 +124,78 @@ include('../php/conexao.php');
     <div>
         <label for="estado">ESTADO:</label>
         <select id="estado" name="estado" required>
-    <option value="" disabled selected hidden>SP</option>
-    <option value="AC">AC</option>
-    <option value="AL">AL</option>
-    <option value="AP">AP</option>
-    <option value="AM">AM</option>
-    <option value="BA">BA</option>
-    <option value="CE">CE</option>
-    <option value="DF">DF</option>
-    <option value="ES">ES</option>
-    <option value="GO">GO</option>
-    <option value="MA">MA</option>
-    <option value="MT">MT</option>
-    <option value="MS">MS</option>
-    <option value="MG">MG</option>
-    <option value="PA">PA</option>
-    <option value="PB">PB</option>
-    <option value="PR">PR</option>
-    <option value="PE">PE</option>
-    <option value="PI">PI</option>
-    <option value="RJ">RJ</option>
-    <option value="RN">RN</option>
-    <option value="RS">RS</option>
-    <option value="RO">RO</option>
-    <option value="RR">RR</option>
-    <option value="SC">SC</option>
-    <option value="SP">SP</option>
-    <option value="SE">SE</option>
-    <option value="TO">TO</option>
-</select>
+            <option value="" disabled selected hidden>SP</option>
+            <option value="AC">AC</option>
+            <option value="AL">AL</option>
+            <option value="AP">AP</option>
+            <option value="AM">AM</option>
+            <option value="BA">BA</option>
+            <option value="CE">CE</option>
+            <option value="DF">DF</option>
+            <option value="ES">ES</option>
+            <option value="GO">GO</option>
+            <option value="MA">MA</option>
+            <option value="MT">MT</option>
+            <option value="MS">MS</option>
+            <option value="MG">MG</option>
+            <option value="PA">PA</option>
+            <option value="PB">PB</option>
+            <option value="PR">PR</option>
+            <option value="PE">PE</option>
+            <option value="PI">PI</option>
+            <option value="RJ">RJ</option>
+            <option value="RN">RN</option>
+            <option value="RS">RS</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="SC">SC</option>
+            <option value="SP">SP</option>
+            <option value="SE">SE</option>
+            <option value="TO">TO</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="referencia">PONTO DE REFERÊNCIA:</label>
+        <input type="text" id="referencia" name="referencia" required placeholder="INSIRA O PONTO DE REFERÊNCIA"><br>
+    </div>
+
+    <div class="grid-container3">
+
+    <h3>CONTATO</h3><br>
+
+        <div>
+            <label for="nome">NOME:</label>
+            <input type="text" id="nome" name="nome" required placeholder="INSIRA O NOME">
+
+            <label for="nome">NOME:</label>
+            <input type="text" id="nome" name="nome" required placeholder="INSIRA O NOME">
+
+            <label for="nome">NOME:</label>
+            <input type="text" id="nome" name="nome" required placeholder="INSIRA O NOME">
+        </div>
+        <div>
+            <label for="parentesco">PARENTESCO:</label>
+            <input type="text" id="parentesco" name="parentesco" required placeholder="INSIRA O PARENTESCO">
+
+            <label for="parentesco">PARENTESCO:</label>
+            <input type="text" id="parentesco" name="parentesco" required placeholder="INSIRA O PARENTESCO">
+
+            <label for="parentesco">PARENTESCO:</label>
+            <input type="text" id="parentesco" name="parentesco" required placeholder="INSIRA O PARENTESCO">
+        </div>
+        <div>
+            <label for="numero_tel">NÚMERO TELEFONE:</label>
+            <input type="text" id="numero_tel" name="numero_tel" required placeholder="INSIRA O NÚMERO DE TELEFONE">
+
+            <label for="numero_tel">NÚMERO TELEFONE:</label>
+            <input type="text" id="numero_tel" name="numero_tel" required placeholder="INSIRA O NÚMERO DE TELEFONE">
+
+            <label for="numero_tel">NÚMERO TELEFONE:</label>
+            <input type="text" id="numero_tel" name="numero_tel" required placeholder="INSIRA O NÚMERO DE TELEFONE">
+        </div>
 </div>
 
-<div>
-<label for="referencia">PONTO DE REFERÊNCIA:</label>
-<input type="text" id="referencia" name="referencia" required placeholder="INSIRA O PONTO DE REFERÊNCIA"><br>
-</div>
 </div>
 
 

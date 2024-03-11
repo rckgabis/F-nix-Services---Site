@@ -90,7 +90,7 @@ body {
 }
 
 .list-item span {
-    margin-right: 10px; /* Adiciona um espaço entre os campos */
+    margin-right: 5px; /* Adiciona um espaço entre os campos */
 }
 
 .list-item i {
@@ -116,7 +116,7 @@ body {
     font-size: 24px;
     color: #105587;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 4px;
 }
 
 .icone-olho:hover,

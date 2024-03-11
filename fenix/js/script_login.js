@@ -17,7 +17,7 @@ document.querySelector('.login-btn').addEventListener('click', function() {
                 var resposta = xhr.responseText;
                 if (resposta.trim() === 'success') {
                     // Login bem-sucedido: redireciona para o dashboard
-                    window.location.href = '../php/dashboard.php';
+                    window.location.href = '../screens/index_registro_ocorr.php';
                 } else {
                     // Login falhou: exibe mensagem de erro
                     alert('Login falhou. Verifique suas credenciais.');

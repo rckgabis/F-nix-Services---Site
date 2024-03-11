@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10/03/2024 às 08:07
+-- Tempo de geração: 12/03/2024 às 00:53
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -49,10 +49,7 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `nome`, `cpf`, `rg`, `email`, `telefone`, `tipo`, `CEP`, `rua`, `num`, `bairro`, `cidade`, `estado`, `pont_ref`) VALUES
-(113, 'Gabriela Aguiar Lima', '572367', '53860', 'gabrielaaguiar2105@gmail.com', '0', 'residencial', '8190', 'Rua Aguamaré', '19', 'Vila Aimoré', 'São Paulo', '0', 'Itaim'),
-(114, 'Gabriela Aguiar Lima', '572367', '53860', 'gabrielaaguiar2105@gmail.com', '0', 'residencial', '8190', 'Rua Aguamaré', '19', 'Vila Aimoré', 'São Paulo', '0', 'Itaim'),
-(115, 'Gabriela Aguiar Lima', '572367', '45455', 'gabrielaaguiar2105@gmail.com', '0', 'residencial', '8190', 'Rua Aguamaré', '19', 'Vila Aimoré', 'São Paulo', 'SP', 'Itaim'),
-(116, 'AAAAAAAA', '572.367.938', '53.860.046', 'gabrielaaguiar2105@gmail.com', '0', 'residencial', '08190-16', 'Rua Aguamaré', '19', 'Vila Aimoré', 'São Paulo', 'SP', 'Itaim');
+(1, 'Gabriela Aguiar', '572.367.938-41', '53.860.046-9', 'gabrielaaguiar2105@gmail.com', '(11) 98866-3489', 'residencial', '08190-160', 'Rua Aguamaré', '19', 'Vila Aimoré', 'São Paulo', 'SP', 'Itaim');
 
 -- --------------------------------------------------------
 
@@ -64,17 +61,18 @@ CREATE TABLE `registro` (
   `id` int(5) NOT NULL,
   `cliente` char(100) NOT NULL,
   `data` date NOT NULL,
-  `hora` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `ocorrencia` char(100) NOT NULL
+  `hora` time DEFAULT NULL,
+  `ocorrencia` char(100) NOT NULL,
+  `cliente_id` int(11) DEFAULT NULL,
+  `servico_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `registro`
 --
 
-INSERT INTO `registro` (`id`, `cliente`, `data`, `hora`, `ocorrencia`) VALUES
-(1, '2024-03-10', '2024-03-10', '2024-03-10 03:00:03', ''),
-(2, '2024-03-10', '2024-03-10', '0000-00-00 00:00:00', '');
+INSERT INTO `registro` (`id`, `cliente`, `data`, `hora`, `ocorrencia`, `cliente_id`, `servico_id`) VALUES
+(15, 'Gabriela Aguiar', '2024-03-11', '18:56:21', 'disparo de alarme', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -83,7 +81,7 @@ INSERT INTO `registro` (`id`, `cliente`, `data`, `hora`, `ocorrencia`) VALUES
 --
 
 CREATE TABLE `servicos` (
-  `codigo_servico` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `nome_servico` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -91,12 +89,10 @@ CREATE TABLE `servicos` (
 -- Despejando dados para a tabela `servicos`
 --
 
-INSERT INTO `servicos` (`codigo_servico`, `nome_servico`) VALUES
+INSERT INTO `servicos` (`id`, `nome_servico`) VALUES
 (1, 'envio de imagem'),
-(2, 'ativacao pgm'),
 (3, 'disparo de alarme'),
-(21, 'saida assistida'),
-(25, 'aa');
+(38, 'ATIVAÇÃO PGM');
 
 -- --------------------------------------------------------
 
@@ -137,13 +133,15 @@ ALTER TABLE `clientes`
 -- Índices de tabela `registro`
 --
 ALTER TABLE `registro`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_registro_cliente` (`cliente_id`),
+  ADD KEY `fk_registro_servico` (`servico_id`);
 
 --
 -- Índices de tabela `servicos`
 --
 ALTER TABLE `servicos`
-  ADD PRIMARY KEY (`codigo_servico`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices de tabela `usuario`
@@ -159,25 +157,36 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
 -- AUTO_INCREMENT de tabela `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `servicos`
 --
 ALTER TABLE `servicos`
-  MODIFY `codigo_servico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `registro`
+--
+ALTER TABLE `registro`
+  ADD CONSTRAINT `fk_registro_cliente` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`),
+  ADD CONSTRAINT `fk_registro_servico` FOREIGN KEY (`servico_id`) REFERENCES `servicos` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
