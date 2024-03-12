@@ -53,6 +53,11 @@ include('../php/conexao.php');
     </div>
 
     <div class="container">
+
+        <a href="index_clientes.php" class="icon-link">
+        <i class="ph ph-caret-double-left"></i>
+        </a>
+
         <h2>CADASTRAR NOVO CLIENTE</h2>
         <form id="cadastroCliente" action="cadastrar_novos_clientes.php" method="POST">
         <label for="nome">NOME:</label>
@@ -60,7 +65,7 @@ include('../php/conexao.php');
 
     <div class="grid-container">
         <div>
-            <label for="cpf">CPF:</label>
+            <label for="cpf">CPF/CNPJ:</label>
             <input type="text" id="cpf" name="cpf" required placeholder="INSIRA O CPF">
         </div>
         <div>
@@ -160,42 +165,72 @@ include('../php/conexao.php');
         <input type="text" id="referencia" name="referencia" required placeholder="INSIRA O PONTO DE REFERÊNCIA"><br>
     </div>
 
+    </div>
+    
     <div class="grid-container3">
+    <div>
+        <label for="nome_contato1">NOME 1:</label>
+        <input type="text" id="nome_contato1" name="nome_contato1" required placeholder="INSIRA O NOME">
 
-    <h3>CONTATO</h3><br>
+        <label for="nome_contato2">NOME 2:</label>
+        <input type="text" id="nome_contato2" name="nome_contato2" required placeholder="INSIRA O NOME">
 
+        <label for="nome_contato3">NOME 3:</label>
+        <input type="text" id="nome_contato3" name="nome_contato3" required placeholder="INSIRA O NOME">
+    </div>
         <div>
-            <label for="nome">NOME:</label>
-            <input type="text" id="nome" name="nome" required placeholder="INSIRA O NOME">
+        <label for="parentesco_contato1">PARENTESCO 1:</label>
+        <select id="parentesco_contato1" name="parentesco_contato1" required>
+            <option value="" disabled selected hidden>SELECIONE O PARENTESCO</option>
+            <option value="Pai">Pai</option>
+            <option value="Mãe">Mãe</option>
+            <option value="Irmão">Irmão(a)</option>
+            <option value="Primo">Primo(a)</option>
+            <option value="Tio">Tio(a)</option>
+            <option value="Avô">Avô(a)</option>
+            <option value="Funcionário">Funcionário(a)</option>
+            <!-- Adicione outras opções conforme necessário -->
+        </select>
+    </div>
+    <div>
+        <label for="parentesco_contato2">PARENTESCO 2:</label>
+        <select id="parentesco_contato2" name="parentesco_contato2" required>
+            <option value="" disabled selected hidden>SELECIONE O PARENTESCO</option>
+            <option value="Pai">Pai</option>
+            <option value="Mãe">Mãe</option>
+            <option value="Irmão">Irmão(a)</option>
+            <option value="Primo">Primo(a)</option>
+            <option value="Tio">Tio(a)</option>
+            <option value="Avô">Avô(a)</option>
+            <option value="Funcionário">Funcionário(a)</option>
+            <!-- Adicione outras opções conforme necessário -->
+        </select>
+    </div>
+    <div>
+        <label for="parentesco_contato3">PARENTESCO 3:</label>
+        <select id="parentesco_contato3" name="parentesco_contato3" required>
+            <option value="" disabled selected hidden>SELECIONE O PARENTESCO</option>
+            <option value="Pai">Pai</option>
+            <option value="Mãe">Mãe</option>
+            <option value="Irmão">Irmão(a)</option>
+            <option value="Primo">Primo(a)</option>
+            <option value="Tio">Tio(a)</option>
+            <option value="Avô">Avô(a)</option>
+            <option value="Funcionário">Funcionário(a)</option>
+            <!-- Adicione outras opções conforme necessário -->
+        </select>
+    </div>
 
-            <label for="nome">NOME:</label>
-            <input type="text" id="nome" name="nome" required placeholder="INSIRA O NOME">
+    <div>
+        <label for="numero_contato1">NÚMERO TELEFONE 1:</label>
+        <input type="tel" id="numero_contato1" name="numero_contato1" required placeholder="INSIRA O NÚMERO DE TELEFONE">
 
-            <label for="nome">NOME:</label>
-            <input type="text" id="nome" name="nome" required placeholder="INSIRA O NOME">
-        </div>
-        <div>
-            <label for="parentesco">PARENTESCO:</label>
-            <input type="text" id="parentesco" name="parentesco" required placeholder="INSIRA O PARENTESCO">
+        <label for="numero_contato2">NÚMERO TELEFONE 2:</label>
+        <input type="tel" id="numero_contato2" name="numero_contato2" required placeholder="INSIRA O NÚMERO DE TELEFONE">
 
-            <label for="parentesco">PARENTESCO:</label>
-            <input type="text" id="parentesco" name="parentesco" required placeholder="INSIRA O PARENTESCO">
-
-            <label for="parentesco">PARENTESCO:</label>
-            <input type="text" id="parentesco" name="parentesco" required placeholder="INSIRA O PARENTESCO">
-        </div>
-        <div>
-            <label for="numero_tel">NÚMERO TELEFONE:</label>
-            <input type="text" id="numero_tel" name="numero_tel" required placeholder="INSIRA O NÚMERO DE TELEFONE">
-
-            <label for="numero_tel">NÚMERO TELEFONE:</label>
-            <input type="text" id="numero_tel" name="numero_tel" required placeholder="INSIRA O NÚMERO DE TELEFONE">
-
-            <label for="numero_tel">NÚMERO TELEFONE:</label>
-            <input type="text" id="numero_tel" name="numero_tel" required placeholder="INSIRA O NÚMERO DE TELEFONE">
-        </div>
-</div>
-
+        <label for="numero_contato3">NÚMERO TELEFONE 3:</label>
+        <input type="tel" id="numero_contato3" name="numero_contato3" required placeholder="INSIRA O NÚMERO DE TELEFONE">
+    </div>
 </div>
 
 
@@ -209,30 +244,108 @@ include('../php/conexao.php');
 
 <script>
 $(document).ready(function() {
-    // Adiciona um ouvinte de eventos de clique no botão "CADASTRAR"
-    $('#btnCadastrar').click(function(event) {
+    $('#cep').blur(function() { // Quando o campo CEP perder o foco
+        var cep = $(this).val().replace(/\D/g, ''); // Remove caracteres não numéricos do CEP
 
-        // Exibe o popup com a mensagem
-        Swal.fire({
-            title: 'Sucesso!',
-            text: 'Cliente cadastrado com sucesso!',
-            icon: 'success',
-            showCancelButton: true,
-            confirmButtonText: 'CONSULTAR',
-            cancelButtonText: 'CADASTRAR OUTRO',
-            reverseButtons: true
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Redireciona para a página de consulta de clientes
-                window.location.href = 'index_clientes.php';
+        if (cep.length != 8) { // Verifica se o CEP possui 8 dígitos
+            // Exibe o pop-up de erro
+            Swal.fire({
+                icon: 'error',
+                title: 'CEP Inválido',
+                text: 'Certifique-se de digitar apenas os números do CEP.'
+            });
+            return;
+        }
+
+        // Requisição AJAX para buscar o endereço usando o CEP
+        $.getJSON('https://viacep.com.br/ws/' + cep + '/json/', function(data) {
+            if (!("erro" in data)) { // Se não houver erro na resposta da API
+                // Preenche os campos de endereço com os dados retornados pela API
+                $('#rua').val(data.logradouro);
+                $('#bairro').val(data.bairro);
+                $('#cidade').val(data.localidade);
+                $('#estado').val(data.uf);
+                // Se houver um campo de número de casa, você pode preenchê-lo com '' ou deixar vazio
+                // Exemplo: $('#numero').val('');
             } else {
-                // Redireciona para a página de cadastro de clientes
-                window.location.href = 'cadastrar_clientes.php';
+                // Exibe o pop-up de erro
+                Swal.fire({
+                    icon: 'error',
+                    title: 'CEP Não Encontrado',
+                    text: 'Por favor, verifique o CEP digitado.'
+                });
+                // Limpa os campos de endereço
+                $('#rua').val('');
+                $('#bairro').val('');
+                $('#cidade').val('');
+                $('#estado').val('');
             }
         });
     });
 });
+
+$(document).ready(function() {
+    // Adiciona um ouvinte de eventos de clique no botão "CADASTRAR"
+    $('#btnCadastrar').click(function(event) {
+        // Verifica se algum campo está vazio
+        if (!$('#nome').val() || 
+            !$('#cpf').val() || 
+            !$('#rg').val() || 
+            !$('#email').val() || 
+            !$('#telefone').val() || 
+            !$('#residencia').val() || 
+            !$('#cep').val() || 
+            !$('#rua').val() || 
+            !$('#numero').val() || 
+            !$('#bairro').val() || 
+            !$('#cidade').val() || 
+            !$('#estado').val() || 
+            !$('#referencia').val() || 
+            !$('#nome_contato1').val() || 
+            !$('#parentesco_contato1').val() || 
+            !$('#numero_contato1').val() || 
+            !$('#nome_contato2').val() || 
+            !$('#parentesco_contato2').val() || 
+            !$('#numero_contato2').val() || 
+            !$('#nome_contato3').val() || 
+            !$('#parentesco_contato3').val() || 
+            !$('#numero_contato3').val()) {
+            // Exibe o pop-up de erro
+            Swal.fire({
+                title: 'Erro!',
+                text: 'Por favor, preencha todos os campos.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+            // Impede o envio do formulário
+            event.preventDefault();
+        } else {
+            // Se todos os campos estiverem preenchidos, envie o formulário
+            // Exibe o pop-up com a mensagem de sucesso após o envio do formulário
+            Swal.fire({
+                title: 'Sucesso!',
+                text: 'Cliente cadastrado com sucesso!',
+                icon: 'success',
+                showCancelButton: true,
+                confirmButtonText: 'CONSULTAR',
+                cancelButtonText: 'CADASTRAR OUTRO',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Redireciona para a página de consulta de clientes
+                    window.location.href = 'index_clientes.php';
+                } else {
+                    // Redireciona para a página de cadastro de clientes
+                    window.location.href = 'cadastrar_clientes.php';
+                }
+            });
+        }
+    });
+});
+
 </script>
+
+
 
 <script src="../js/script_cad_novos_clientes.js"></script>
 

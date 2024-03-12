@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f1f0f0;
 }
 
 .sidenav {
@@ -55,9 +56,20 @@ body {
     margin: 100px auto 0;
     margin-left: 500px; /* Ajuste o valor aqui conforme necessário */
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon-link {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    z-index: 1000; /* Certifique-se de que o ícone esteja acima de outros elementos */
+    text-decoration: none;
+    font-size: 32px; /* Ajuste o tamanho conforme necessário */
+    color: #105587; /* Ajuste a cor conforme necessário */
+    cursor: pointer; /* Mude o cursor para indicar que o ícone é clicável */
 }
 
 
@@ -163,7 +175,7 @@ label {
     grid-gap: 10px;
 }
 
-/* Largura dos campos de entradaaaaaaaaa */
+/* Largura dos campos de entrada */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -172,7 +184,7 @@ textarea {
     font-family: 'League Spartan', sans-serif;
     letter-spacing: 2px;
     font-size: 14px;
-    color: #969494; 
+    color: #7a7a7a; 
     text-indent: 10px; 
     width: calc(100% - 20px); /* Ajusta a largura para considerar a margem */
     padding: 10px;
@@ -237,4 +249,44 @@ button[type="reset"] {
     background-color: #105587 !important; /* Cor cinza para o botão de cancelamento */
     color: #ffffff !important; /* Cor do texto do botão de cancelamento */
     border-radius: 40px;
+}
+
+/* Estilo para o contêiner da grade */
+.grid-container3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Divide em três colunas de largura igual */
+    gap: 10px; /* Espaçamento entre as colunas */
+}
+
+/* Estilo para os elementos dentro da grade */
+.grid-container3 > div {
+    display: flex; /* Usa flexbox para alinhar os itens verticalmente */
+    flex-direction: column; /* Coloca os itens em uma coluna */
+}
+
+/* Estilo para as etiquetas */
+.grid-container3 label {
+    margin-bottom: 5px; /* Espaçamento entre as etiquetas */
+}
+
+/* Estilo para os campos de entrada */
+.grid-container3 input {
+    width: 100%; /* Garante que os campos de entrada ocupem a largura total do contêiner pai */
+    margin-bottom: 10px; /* Espaçamento entre os campos */
+}
+
+/* Estilo para os selects */
+.grid-container3 select {
+    width: calc(100% - 2px); /* Subtrai a largura da borda do contêiner pai */
+    margin-bottom: 10px; /* Espaçamento entre os selects */
+}
+
+/* Estilo para ajustar os selects na segunda coluna */
+.grid-container3 > div:nth-child(2) {
+    grid-column: 2; /* Define a segunda coluna */
+}
+
+/* Estilo para ajustar os campos de número na última coluna */
+.grid-container3 > div:nth-child(3) {
+    grid-column: 3; /* Define a terceira coluna */
 }

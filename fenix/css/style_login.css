@@ -1,4 +1,4 @@
-/* Estilos para o corpo no modo geral da página */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -13,43 +13,45 @@ body {
     background-image: url('../assets/fundo-logi2.png');
     background-size: cover;
     background-position: center;
-    border-radius: 5vw; /* Usando uma unidade relativa para a borda */
+    border-radius: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 5vw; /* Usando uma unidade relativa para o preenchimento */
-    max-width: 90vw; /* Usando uma unidade relativa para a largura máxima */
+    padding: 25px;
+    height: 750px;
+    width: 520px;
     text-align: center;
     position: relative;
 }
 
+
 /* Estilos para o titulo "LOGIN" */
 h2 {
-    font-size: 4vw; /* Usando uma unidade relativa para o tamanho da fonte */
+    font-size: 18px;
     color: #105587;
     font-family: 'League Spartan', sans-serif;
-    letter-spacing: 1vw; /* Usando uma unidade relativa para o espaçamento entre letras */
-    margin-top: 20vw; /* Usando uma unidade relativa para a margem superior */
-    margin-bottom: 5vw; /* Usando uma unidade relativa para a margem inferior */
+    letter-spacing: 7px;
+    margin-top: 400px;
+    margin-bottom: 60px;
     font-weight: 600;
 }
 
 /* Estilos para os campos de entrada */
 .input-container {
     position: relative;
-    margin-bottom: 2vw; /* Usando uma unidade relativa para a margem inferior */
+    margin-bottom: 8px;
 }
 
 .input-container input {
-    width: calc(100% - 10vw); /* Usando uma unidade relativa para a largura do input */
-    padding: 3vw;
-    border-radius: 5vw;
+    width: calc(100% - 145px); 
+    padding: 12px;
+    border-radius: 40px;
     border: 1px solid #b9b7b7;
     outline: none;
     font-family: 'Inter', sans-serif;
-    font-size: 2vw; /* Usando uma unidade relativa para o tamanho da fonte */
-    letter-spacing: 0.5vw; /* Usando uma unidade relativa para o espaçamento entre letras */
+    font-size: 12px;
+    letter-spacing: 2px;
     font-weight: 600;
     color: #b9b7b7; 
-    text-indent: 6vw; /* Usando uma unidade relativa para o recuo do texto */
+    text-indent: 60px; 
 }
 
 .input-container input::placeholder {
@@ -60,7 +62,7 @@ h2 {
 .input-container i {
     position: absolute;
     top: 50%;
-    margin-left: 4vw; /* Usando uma unidade relativa para a margem esquerda */
+    margin-left: 20px;
     transform: translateY(-50%);
     color: #9e9d9d;
 }
@@ -68,10 +70,10 @@ h2 {
 /* Estilos para o botão "Esqueceu sua senha?" */
 .forgot-password {
     font-family: 'Inter', sans-serif;
-    letter-spacing: 0.5vw; /* Usando uma unidade relativa para o espaçamento entre letras */
-    font-size: 1.5vw; /* Usando uma unidade relativa para o tamanho da fonte */
+    letter-spacing: 2px;
+    font-size: 10px;
     text-align: right;
-    margin-right: 6vw; /* Usando uma unidade relativa para a margem direita */
+    margin-right: 60px;
     font-weight: 600;
 }
 
@@ -90,11 +92,11 @@ h2 {
     background-color: #105587;
     color: #fff;
     font-family: 'Inter', sans-serif;
-    letter-spacing: 0.5vw; /* Usando uma unidade relativa para o espaçamento entre letras */
-    margin-top: 3vw; /* Usando uma unidade relativa para a margem superior */
-    padding: 1vw 3vw; /* Usando uma unidade relativa para o preenchimento */
+    letter-spacing: 2px;
+    margin-top: 40px;
+    padding: 10px 30px;
     border: none;
-    border-radius: 5vw;
+    border-radius: 35px;
     cursor: pointer;
 }
 
@@ -106,10 +108,10 @@ h2 {
 /* Estilos para o botão "Crie sua conta" */
 .create-account {
     font-family: 'Inter', sans-serif;
-    letter-spacing: 0.5vw; /* Usando uma unidade relativa para o espaçamento entre letras */
-    font-size: 1.2vw; /* Usando uma unidade relativa para o tamanho da fonte */
+    letter-spacing: 2px;
+    font-size: 8px;
     font-weight: 600;
-    margin-top: 1.5vw; /* Usando uma unidade relativa para a margem superior */
+    margin-top: 20px;
 }
 
 .create-account a {
@@ -120,44 +122,4 @@ h2 {
 
 .create-account a:hover {
     color: #FF5C00; 
-}
-
-/* Media queries para ajustar o layout em diferentes tamanhos de tela */
-@media (max-width: 800px) {
-    .login-box {
-        padding: 10vw; /* Ajuste do preenchimento para telas menores */
-    }
-
-    h2 {
-        margin-top: 10vw; /* Ajuste da margem superior para telas menores */
-        margin-bottom: 3vw; /* Ajuste da margem inferior para telas menores */
-    }
-
-    .input-container input {
-        font-size: 4vw; /* Ajuste do tamanho da fonte para telas menores */
-        letter-spacing: 1vw; /* Ajuste do espaçamento entre letras para telas menores */
-        text-indent: 6vw; /* Ajuste do recuo do texto para telas menores */
-    }
-
-    .forgot-password {
-        font-size: 1.2vw; /* Ajuste do tamanho da fonte para telas menores */
-        margin-right: 8vw; /* Ajuste da margem direita para telas menores */
-    }
-
-    .login-btn {
-        margin-top: 5vw; /* Ajuste da margem superior para telas menores */
-        padding: 2vw 6vw; /* Ajuste do preenchimento para telas menores */
-    }
-
-    .create-account {
-        font-size: 1.2vw; /* Ajuste do tamanho da fonte para telas menores */
-        margin-top: 3vw; /* Ajuste da margem superior para telas menores */
-    }
-}
-
-@media (min-width: 1920px) {
-    /* Adicione estilos específicos para telas maiores que 1920px */
-    .login-box {
-        max-width: 50vw; /* Reduzindo a largura para telas maiores */
-    }
 }

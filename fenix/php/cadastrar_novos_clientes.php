@@ -17,16 +17,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $telefone = $_POST['telefone'];
     $tipo = $_POST['residencia'];
-    $cep = $_POST['cep']; // Corrigido para 'cep'
+    $cep = $_POST['cep'];
     $rua = $_POST['rua'];
     $num = $_POST['numero'];
     $bairro = $_POST['bairro'];
     $cidade = $_POST['cidade'];
     $estado = $_POST['estado'];
-    $pont_ref = $_POST['referencia']; // Corrigido para 'referencia'
+    $pont_ref = $_POST['referencia'];
+
+    // Novos campos adicionados
+    $nome_contato1 = $_POST['nome_contato1'];
+    $parentesco_contato1 = $_POST['parentesco_contato1'];
+    $numero_contato1 = $_POST['numero_contato1'];
+    $nome_contato2 = $_POST['nome_contato2'];
+    $parentesco_contato2 = $_POST['parentesco_contato2'];
+    $numero_contato2 = $_POST['numero_contato2'];
+    $nome_contato3 = $_POST['nome_contato3'];
+    $parentesco_contato3 = $_POST['parentesco_contato3'];
+    $numero_contato3 = $_POST['numero_contato3'];
 
     // Inserir os dados no banco de dados
-    $query = "INSERT INTO clientes (nome, cpf, rg, email, telefone, tipo, CEP, rua, num, bairro, cidade, estado, pont_ref) VALUES ('$nome', '$cpf', '$rg', '$email', '$telefone', '$tipo', '$cep', '$rua', '$num', '$bairro', '$cidade', '$estado', '$pont_ref')";
+    $query = "INSERT INTO clientes (nome, cpf, rg, email, telefone, tipo, CEP, rua, num, bairro, cidade, estado, pont_ref, nome_contato1, parentesco_contato1, numero_contato1, nome_contato2, parentesco_contato2, numero_contato2, nome_contato3, parentesco_contato3, numero_contato3) VALUES ('$nome', '$cpf', '$rg', '$email', '$telefone', '$tipo', '$cep', '$rua', '$num', '$bairro', '$cidade', '$estado', '$pont_ref', '$nome_contato1', '$parentesco_contato1', '$numero_contato1', '$nome_contato2', '$parentesco_contato2', '$numero_contato2', '$nome_contato3', '$parentesco_contato3', '$numero_contato3')";
     $resultado = mysqli_query($conexao, $query);
 
     // Verifica se a inserção foi bem-sucedida
@@ -54,4 +65,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Location: cadastrar_clientes.php');
     exit();
 }
-?>

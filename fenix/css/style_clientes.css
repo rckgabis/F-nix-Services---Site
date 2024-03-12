@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f1f0f0;
     
 }
 
@@ -55,7 +56,7 @@ body {
     max-width: 1000px;
     margin: 100px auto 0; 
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -74,36 +75,53 @@ body {
     text-align: center;
 }
 
+.icon-link {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    z-index: 1000; /* Certifique-se de que o ícone esteja acima de outros elementos */
+    text-decoration: none;
+    font-size: 32px; /* Ajuste o tamanho conforme necessário */
+    color: #105587; /* Ajuste a cor conforme necessário */
+    cursor: pointer; /* Mude o cursor para indicar que o ícone é clicável */
+}
+
 .lista {
-    
     margin-top: 40px;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.list-item {
+.grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto; /* Define a grade com 6 colunas */
-    align-items: center; /* Alinha os itens verticalmente */
-    padding: 10px; /* Adiciona algum espaçamento entre os itens */
-    border-bottom: 1px solid #ccc; /* Adiciona uma linha divisória entre os itens */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr auto;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
 }
 
 .list-item span {
-    margin-right: 5px; /* Adiciona um espaço entre os campos */
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #181818;
+}
+
+.list-icon {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .list-item i {
-    cursor: pointer; /* Altera o cursor para indicar que os ícones são clicáveis */
-    display: flex; /* Altera o display para flex */
-    justify-content: center; /* Alinha os ícones horizontalmente */
-    align-items: center; /* Alinha os ícones verticalmente */
-    width: 24px; /* Define a largura dos ícones */
-    height: 24px; /* Define a altura dos ícones */
-}
-
-.nome {
-    margin-right: 10px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
 }
 
 .icone-container {

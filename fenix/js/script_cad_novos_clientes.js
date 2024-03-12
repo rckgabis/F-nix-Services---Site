@@ -3,28 +3,11 @@ $(document).ready(function(){
     $('#rg').mask('00.000.000-0', {reverse: true});
     $('#telefone').mask('(00) 90000-0000');
     $('#cep').mask('00000-000');
+    $('#numero_contato1').mask('(00) 90000-0000');
+    $('#numero_contato2').mask('(00) 90000-0000');
+    $('#numero_contato3').mask('(00) 90000-0000');
 });
 
-$('#cep').blur(function() { //Preenche os dados de acordo com o CEP
-    var cep = $(this).val().replace(/\D/g, '');
-
-    if (cep.length != 8) {
-        return;
-    }
-
-    $.getJSON('https://viacep.com.br/ws/' + cep + '/json/', function(data) {
-        if (!("erro" in data)) {
-            $('#rua').val(data.logradouro);
-            $('#bairro').val(data.bairro);
-            $('#cidade').val(data.localidade);
-            $('#estado').val(data.uf);
-            $('#numero').focus();
-        } else {
-            alert('CEP não encontrado.');
-            limparCamposEndereco();
-        }
-    });
-});
 
 document.getElementById("cadastroCliente").addEventListener("submit", function(event) {
     event.preventDefault(); // Impede o envio padrão do formulário

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12/03/2024 às 00:53
+-- Tempo de geração: 12/03/2024 às 10:03
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -41,15 +41,25 @@ CREATE TABLE `clientes` (
   `bairro` char(50) NOT NULL,
   `cidade` char(50) NOT NULL,
   `estado` char(2) NOT NULL,
-  `pont_ref` varchar(100) NOT NULL
+  `pont_ref` varchar(100) NOT NULL,
+  `nome_contato1` char(100) NOT NULL,
+  `parentesco_contato1` char(100) NOT NULL,
+  `numero_contato1` varchar(16) NOT NULL,
+  `nome_contato2` char(100) NOT NULL,
+  `parentesco_contato2` char(100) NOT NULL,
+  `numero_contato2` varchar(16) NOT NULL,
+  `nome_contato3` char(100) NOT NULL,
+  `parentesco_contato3` char(100) NOT NULL,
+  `numero_contato3` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `clientes`
 --
 
-INSERT INTO `clientes` (`id`, `nome`, `cpf`, `rg`, `email`, `telefone`, `tipo`, `CEP`, `rua`, `num`, `bairro`, `cidade`, `estado`, `pont_ref`) VALUES
-(1, 'Gabriela Aguiar', '572.367.938-41', '53.860.046-9', 'gabrielaaguiar2105@gmail.com', '(11) 98866-3489', 'residencial', '08190-160', 'Rua Aguamaré', '19', 'Vila Aimoré', 'São Paulo', 'SP', 'Itaim');
+INSERT INTO `clientes` (`id`, `nome`, `cpf`, `rg`, `email`, `telefone`, `tipo`, `CEP`, `rua`, `num`, `bairro`, `cidade`, `estado`, `pont_ref`, `nome_contato1`, `parentesco_contato1`, `numero_contato1`, `nome_contato2`, `parentesco_contato2`, `numero_contato2`, `nome_contato3`, `parentesco_contato3`, `numero_contato3`) VALUES
+(128, 'Gabriela Aguiara', '572.367.938-41', '53.860.046-9', 'gabrielaaguiar2105@gmail.com', '(11) 98866-3489', 'residencial', '08190-160', 'Rua Aguamaré', '19', 'Vila Aimoré', 'São Paulo', 'SP', 'Estação Itaim', 'AA', 'Pai', '(11) 91212-1212', 'BB', 'Mãe', '(11) 91313-1313', 'CC', 'Pai', '(11) 91414-1414'),
+(130, 'vfvg', '572.367.938-41', '53.860.046-9', 'liduinaa2015@gmail.com', '(52) 11110-1415', 'comercial', '01311-000', 'Avenida Paulista', '40000000', 'Bela Vista', 'São Paulo', 'SP', 'Paulista', 'fbb', 'Pai', '(11) 91212-1212', 'BB', 'Pai', '(11) 91313-1313', 'CC', 'Mãe', '(11) 91414-1414');
 
 -- --------------------------------------------------------
 
@@ -157,7 +167,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
 -- AUTO_INCREMENT de tabela `registro`

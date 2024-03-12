@@ -40,6 +40,9 @@ include('../php/conexao.php');
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
 
     <link rel="stylesheet" href="../css/style_registro_ocorr.css">
 </head>
@@ -97,7 +100,7 @@ include('../php/conexao.php');
                 echo "<option value=''>Erro ao carregar tipo de ocorrências</option>";
             }
             ?>
-                <option value="nova">Cadastrar nova</option>
+                <option value="nova">CADASTRAR NOVA</option>
 
         </select>
 
@@ -120,6 +123,7 @@ include('../php/conexao.php');
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <script>
+
 
 function salvarOcorrencia() {
     // Obter os dados do formulário
@@ -221,6 +225,14 @@ function mostrarFormularioNovoOcorrencia() {
         }
     }
 
+    function limparForm() {
+    // Limpar os campos do select
+    document.getElementById('cliente').selectedIndex = 0;
+    document.getElementById('ocorrencia').selectedIndex = 0;
+
+    // Ocultar o formulário de nova ocorrência
+    document.getElementById('form_nova_ocorrencia').style.display = 'none';
+}
 
 </script>
 
